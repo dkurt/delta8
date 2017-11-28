@@ -77,11 +77,11 @@ cd /path/to/opencv
 mkdir build && cd build
 ```
 
-1. Build OpenCV. Disable unused modules by `-DBUILD_opencv_module=OFF`.
+1. Build OpenCV.
 
   * Ubuntu
   ```bash
-  cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_LIST=dnn,python2,videoio /path/to/opencv && make -j4
+  cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_LIST=dnn,python2,videoio,highgui /path/to/opencv && make -j4
   ```
 
   * Windows
@@ -89,7 +89,7 @@ mkdir build && cd build
     ```bash
     "C:\Program Files\CMake\bin\cmake.exe" ^
         -DCMAKE_BUILD_TYPE=Release ^
-        -DBUILD_LIST=dnn,python2,videoio ^
+        -DBUILD_LIST=dnn,python2,videoio,highgui ^
         -G "Visual Studio 14 Win64" /path/to/opencv
 
     "C:\Program Files\CMake\bin\cmake.exe" --build . --config Release -- /m:4
